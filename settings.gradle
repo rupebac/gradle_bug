@@ -1,7 +1,5 @@
-rootProject.name = 'cdate'
+rootProject.name = 'sample'
 
 include 'platform'
-
 include 'app'
-
 include 'lib'
