@@ -1,4 +1,7 @@
+apply plugin: 'java-library'
+
 group 'com.sample.branch'
 
 dependencies {
+    implementation platform(project.project(":platform"))
 }
