@@ -1,0 +1,10 @@
+group 'com.sample.app'
+
+
+dependencies {
+    implementation project(':lib')
+
+    implementation 'com.google.http-client:google-http-client'
+
+    implementation "com.netflix.hystrix:hystrix-core"
+}

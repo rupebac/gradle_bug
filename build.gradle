@@ -1,0 +1,30 @@
+wrapper {
+    gradleVersion = '5.4.1'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java-library'
+
+subprojects {
+    if(!project.path.contains("platform")) {
+        apply plugin: 'java-library'
+
+        dependencies {
+            implementation platform(project.project(":platform"))
+        }
+    }
+
+    task listAllDependencies(type: DependencyReportTask) {}
+
+    configurations.all {
+        resolutionStrategy {
+            failOnVersionConflict()
+        }
+    }
+}
+
